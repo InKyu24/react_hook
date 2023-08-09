@@ -1,5 +1,5 @@
 .App {
-  text-align: center;
+  /* text-align: center; */
 }
 
 .App-logo {
@@ -32,7 +32,42 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
+}
+
+/* 네비게이션 바 스타일링 */
+.App>nav {
+  background-color: #767676;
+  color: #fff;
+  padding: 10px;
+}
+
+.App>nav>ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.App>nav>ul>li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.App>nav>ul>li>a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+}
+
+/* 마우스 호버 효과 */
+.App>nav>ul>li>a:hover {
+  color: #2a2a2ae1;
+}
+
+.App>.container {
+  width: 80%;
+  margin: 20px auto;
 }
