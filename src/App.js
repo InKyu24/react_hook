@@ -9,6 +9,10 @@ import StateBasic from './components/usestate/StateBasic';
 import Page from './components/Page';
 import Topics from './components/Topics';
 import AxiosTest from './components/AxiosTest';
+import Counter from './components/redux/Counter';
+import FileUpload from './components/fileupload/FileUpload';
+import FileDownload from './components/filedownload/FileDownload';
+import Home from './components/redux/Home';
 
 function App() {
   return (
@@ -16,6 +20,7 @@ function App() {
       <Router>
         <nav>
           <ul>
+            <li><Link to="/">home</Link></li>
             <li><Link to="/useState">useState</Link></li>
             <li><Link to="/useEffect">useEffect</Link></li>
             <li><Link to="/useContext">useContext</Link></li>
@@ -25,9 +30,13 @@ function App() {
             <li><Link to="/page">page</Link></li>
             <li><Link to="/topics">topics</Link></li>
             <li><Link to="/axios">axios</Link></li>
+            <li><Link to="/counter">counter</Link></li>
+            <li><Link to="/upload">파일 업로드</Link></li>
+            <li><Link to="/download">파일 다운로드</Link></li> 
           </ul>
         </nav>
         <Routes>
+          <Route path="/" element={<Home />} />
           <Route path="/useState" element={<StateBasic />} />
           <Route path="/useEffect" element={<EffectBasic1 />} />
           <Route path="/useContext" element={<ContextBasic />} />
@@ -38,6 +47,9 @@ function App() {
           <Route path="/topics" element={<Topics />} />
           <Route path="/topics/:topicName" exact element={<Topics />} />
           <Route path="/axios" element={<AxiosTest />} />
+          <Route path="/counter" element={<Counter />} />
+          <Route path="/upload" element={<FileUpload />} />
+          <Route path="/download" element={<FileDownload />} />
         </Routes>
       </Router>
     </div>

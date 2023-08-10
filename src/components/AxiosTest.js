@@ -6,7 +6,7 @@ function AxiosTest() {
     const [bbsList, setBbsList] = useState([]);
 
     useEffect(() => {
-        // getbbsListPromise(); 
+        // getBbsListPromise(); 
         getBbsListAsync();
     }, []);
 
@@ -32,6 +32,7 @@ function AxiosTest() {
         };
         try {
             const response = await axios.post('http://localhost:3000/bbswrite', newPost);
+            console.log(response);
             setBbsList([...bbsList, newPost]);
         } catch (error) {
             console.error('Error adding member:', error);
